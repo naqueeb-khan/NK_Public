@@ -20,7 +20,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 @RequestMapping(path = Constant.USERCTL)
 public class UserCtl extends BaseCtl {
     @GetMapping("/getUser")
-    @ResponseBody
     public ResponseEntity<ResponseData<User>> getMethodName() {
         System.out.println("user controller");
         User user=new User();
@@ -30,7 +29,7 @@ public class UserCtl extends BaseCtl {
         response.setList(null);  
         return  ResponseEntity.ok(response);
     }
-    @PostMapping("/addOrUpdateUser")
+    @PostMapping("/postUser")
     public ResponseData<User> postMethodName(@RequestBody ResponseData<User> req) {
         
         System.out.println("user controller");
