@@ -1,0 +1,9 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/001-create-role-table.yaml
+  - include:
+      file: db/changelog/002-create-user-table.yaml
+  - include:
+      file: db/changelog/003-user-table-add-col-phone.yaml
+  - include:
+      file: db/changelog/004-user-table-drop-col-phone.yaml

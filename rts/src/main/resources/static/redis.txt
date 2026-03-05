@@ -1,0 +1,28 @@
+Redis will not installed in windows so need to install in Linux
+
+in powershell
+-> wsl --install      == install ubuntu and set password
+-> wsl -l -v          ==verify
+->wsl --shutdown    ==restart
+->wsl -u root       == run as admin
+->passwd administrator   ==reset password
+
+Installed Redis server
+
+->sudo apt update
+->sudo apt install redis-server -y
+-> sudo service redis-server start   == start
+-> redis-cli ping                  ==test
+-> key * or key user:*          ===to check user cache
+->redis-cli -h localhost -p 6379 ping  == default host and port
+->redis-cli monitor            == monitor logs
+-> FLUSHDB                  ==clear current db
+-> FLUSHALL               ==clear all db cache
+
+Note: we can't access redis in windows if it installed in ubuntu so set protected-mode no if it is yes
+and restart it.
+->sudo nano /etc/redis/redis.conf  ==edit file and set protected-mode no and save it.
+->sudo service redis-server restart  ==> restart redis
+-> Test-NetConnection -ComputerName localhost -Port 6379  ==> Windows PowerShell- verify if redis is accessible from windows
+
+default host and port =localhost, 6379

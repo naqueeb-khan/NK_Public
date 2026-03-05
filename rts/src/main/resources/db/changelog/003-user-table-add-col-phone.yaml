@@ -1,0 +1,18 @@
+databaseChangeLog:
+  - changeSet:
+      id: 003-user-table-add-col-phone
+      author: naqueeb.khan
+      changes:
+        - addColumn:
+            tableName: user
+            columns:
+              - column:
+                  name: phone
+                  type: VARCHAR(20)
+                  constraints:
+                    nullable: true
+
+      rollback:
+        - dropColumn:
+            tableName: user
+            columnName: phone

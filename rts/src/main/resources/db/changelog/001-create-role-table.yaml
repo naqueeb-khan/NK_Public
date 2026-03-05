@@ -1,0 +1,25 @@
+databaseChangeLog:
+  - changeSet:
+      id: 001-create-role-table
+      author: naqueeb.khan
+      changes:
+        - createTable:
+            tableName: role
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: role_name
+                  type: VARCHAR(100)
+                  constraints:
+                    nullable: false
+                    unique: false
+
+      rollback:
+        - dropTable:
+            tableName: role
