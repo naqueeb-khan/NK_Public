@@ -13,21 +13,20 @@ import org.springframework.web.bind.annotation.RequestHeader;
 public class BaseCtl {
    @GetMapping
    public String handleGetMethods(@RequestHeader("X-Target-Resource") String target) {
-    if(!target.isEmpty() || target.length()>0){
-        System.out.println("url=======> "+target);
-       return "forward:"+target; 
-    }
-       return "";
+      if (!target.isEmpty() || target.length() > 0) {
+         System.out.println("url=======> " + target);
+         return "forward:" + target;
+      }
+      return "";
    }
-  
-    @PostMapping
-    public String handlePostMethods(@RequestHeader("X-Target-Resource") String target){     
-      if(!target.isEmpty() || target.length()>0){
-        System.out.println("url=======> "+target);
-       return "forward:"+target; 
-    }
-       return "";
-    }
 
+   @PostMapping
+   public String handlePostMethods(@RequestHeader("X-Target-Resource") String target) {
+      if (!target.isEmpty() || target.length() > 0) {
+         System.out.println("url=======> " + target);
+         return "forward:" + target;
+      }
+      return "";
+   }
 
 }

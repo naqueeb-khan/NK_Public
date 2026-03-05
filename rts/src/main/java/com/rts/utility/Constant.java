@@ -11,10 +11,15 @@ public class Constant {
 
     //API URL's
     public static final String BASECTL="/api";
-
     public static final String USERCTL="/user";
-
     public static final String ROLECTL="/role";
+
+    public static final String ADD="Add";
+    public static final String UPDATE="Update";
+    public static final String DELETE="Delete";
+
+
+
 
 
 }

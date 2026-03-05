@@ -11,7 +11,6 @@ import com.rts.service.TestService;
 
 @RestController
 @RequestMapping("/testCtl")
-@CrossOrigin(origins = "http://localhost:4200/RTS")
 public class TestClt { 
     @Autowired
   private TestService service;
