@@ -6,74 +6,53 @@ import java.util.Map;
 
 public class ResponseData<T> {
 
-  private Map<String, T> data;
-  private Map<String, String> msg;
-  private Map<String, List<T>> list;
-  private Map<String, List<Map<String, String>>> inputErrors;
-  private Map<String, String> businessError;
+  private T data;
+  private String msg;
+  private List<T> list;
+  private  Map<String,String> inputErrors;
+  private String businessError;
 
   public ResponseData() {
   }
 
-  public ResponseData(Map<String, T> data, Map<String, String> msg, Map<String, List<T>> list,
-      Map<String, List<Map<String, String>>> inputErrors, Map<String, String> businessError) {
-    this.data = data;
-    this.msg = msg;
-    this.list = list;
-    this.inputErrors = inputErrors;
-    this.businessError = businessError;
-  }
 
-  public Map<String, String> getMsg() {
+  public String getMsg() {
     return msg;
   }
 
   public void setMsg(String msg) {
-    Map<String, String> m = new HashMap<>();
-    m.put(Constant.MSG, msg);
-    this.msg = m;
+    this.msg = msg;
   }
 
   public void setData(T data) {
-    Map<String, T> m = new HashMap<>();
-    m.put(Constant.DATA, data);
-    this.data = m;
+    this.data = data;
   }
 
-  public Map<String, T> getData() {
+  public  T getData() {
     return data;
   }
 
-  public Map<String, List<T>> getList() {
+  public List<T> getList() {
     return list;
   }
 
-  public void setList(List<T> list) {
-    Map<String, List<T>> m = new HashMap<>();
-    m.put(Constant.LIST, list);
-    this.list = m;
+  public void setList(List<T> list) {  
+    this.list = list;
   }
 
-  public Map<String, List<Map<String, String>>> getInputErrors() {
+  public Map<String, String> getInputErrors() {
     return inputErrors;
   }
 
-  public void setInputErrors(List<Map<String, String>> inputErrors) {
-    Map<String, List<Map<String, String>>> m = new HashMap<>();
-
-    m.put(Constant.INPUTERRORS, inputErrors);
-    this.inputErrors = m;
+  public void setInputErrors(Map<String,String> inputErrors) {
+    this.inputErrors = inputErrors;
   }
 
-  public Map<String, String> getBusinessError() {
-
+  public String getBusinessError() {
     return businessError;
   }
 
-  public void setBusinessError(String businessError) {
-    Map<String, String> m = new HashMap<>();
-    m.put(Constant.BUSINESSERROR, businessError);
-    this.businessError = m;
+  public void setBusinessError(String businessError) { 
+    this.businessError = businessError;
   }
-
 }

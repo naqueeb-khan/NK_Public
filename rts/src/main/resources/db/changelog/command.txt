@@ -1,0 +1,19 @@
+
+# Dry run to check sql query
+-> mvn liquibase:updateSQL
+
+#Validate
+-> mvn liquibase:validate
+
+#Run Liquibase without running spring boot app
+-> mvn liquibase:update
+it will create tables and two change log tables
+
+#Roll back command on windows(1,,2...5 are table count check in logs table)
+-> mvn liquibase:rollback "-Dliquibase.rollbackCount=1"
+
+#check status
+-> mvn liquibase:status
+
+# Drop all
+-> mvn liquibase:dropAll
